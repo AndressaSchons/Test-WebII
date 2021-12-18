@@ -30,6 +30,13 @@
     <section class="container">
 
         <p class="h2">Notas:</p>
+
+        <div class="texto-protegido" id="texto-protegido">
+            <input type="text" id="texto">
+                <p>Este é um simulador para te ajudar a acompanhar o que pode se tornar sua nota.</p>
+            </input>
+        </div>
+
         <table class="table">
             <thead>
             <tr>
@@ -112,11 +119,11 @@
                 <input id="notaCN" name="notaCN" type="text" placeholder="Nota Ciências da Natureza" class="form-control">
             </div>
         </div>
-        <button id="adicionarNota" type="button" class="btn btn-outline-success">Adicionar</button>
+        <button id="adicionarNota" type="button" class="btn btn-outline-success" onclick="redirect()">Adicionar</button>
     </form>
 </section>
 
-<script src="/js.js" ></script>
+<script src="js.js"></script>
 
 </body>
 </html>
