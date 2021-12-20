@@ -27,35 +27,30 @@ for (var i = 0; i < alunos.length; i++) {
     var notaCNValida = validaNotas(notaCN);
 
     if (!notaLingValida) {
-        console.log("Nota Linguagens inválido");
         notaLingValida = false;
         tdMedia.textContent = "Nota de Linguagens inválido";
         alunoo.classList.add("aluno-invalido");
     }
 
     if (!notaCHValida) {
-        console.log("Nota de Ciências Humanas inválido");
         notaCHValida = false;
         tdMedia.textContent = "Nota de Ciências Humanas inválida";
         alunoo.classList.add("aluno-invalido");
     }
 
     if (!notaRedValida) {
-        console.log("Nota de Redação Inválida");
         notaRedValida = false;
         tdMedia.textContent = "Nota de Redação Inválida";
         alunoo.classList.add("aluno-invalido");
     }
 
     if (!notaMatValida) {
-        console.log("Nota de Matemática Inválida");
         notaMatValida = false;
         tdMedia.textContent = "Nota de Matemática Inválida";
         alunoo.classList.add("aluno-invalido");
     }
 
     if (!notaCNValida) {
-        console.log("Nota de Ciências da Natureza inválida");
         notaCNValida = false;
         tdMedia.textContent = "Nota de Ciências da Natureza inválida";
         alunoo.classList.add("aluno-invalido");
@@ -74,9 +69,13 @@ function calculoMedia(notaLing, notaCH, notaRed, notaMat, notaCN){
 }
 function validaNotas(nota){
     if (nota >= 650){
+        //document.querySelector("table tr:firt-child");
+        //$(this).parent.backgroundColor("#00FA9A");
         return true;
     }
     else{
+        //$(this).parent.backgroundColor("#B22222");
+        //document.querySelector("table tr:firt-child");
         return false;
     }
 }

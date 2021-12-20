@@ -36,7 +36,18 @@ function pesquisa(){
     }
 }
 /*Bloqueador*/
-var textoProtegido = document.querySelector("#textoProtegido");
-textoProtegido.addEventListener("paste", function (e){
+function blockCopy(e) {
     e.preventDefault();
-})
+    e.stopPropagation();
+}
+
+function blockPressCtrlC(e) {
+    if (e.ctrlKey && e.keyCode == 67) {
+        blockCopy(e);
+    }
+}
+
+document.addEventListener("copy", blockCopy, false);
+document.addEventListener("beforecopy", blockCopy, false);
+
+document.addEventListener("keydown", blockPressCtrlC, false);
