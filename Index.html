@@ -34,7 +34,7 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link "  href="#">Início</a>
+                    <a class="nav-link "  href="./login.html">Início</a>
                     <a class="nav-link active" aria-current="page" href="#">Simular notas</a>
                 </div>
             </div>
@@ -49,9 +49,20 @@
     <section class="container">
 
         <div class="texto-protegido" id="texto-protegido">
-            <p class="h5" onclick="blockCopy()">Este é um simulador para te ajudar a acompanhar o que pode se tornar sua nota.</p>
+            <p class="h5" onclick="blockCopy(e)">Este é um simulador para te ajudar a acompanhar o que pode se tornar sua nota.</p>
         </div>
 
+        <div class="row pesquisa">
+            <div class="col">
+                <input id="pesquisa" name="pesquisa" type="text" placeholder="Pesquisar" class="form-control">
+            </div>
+           <div class="col">
+               <div class="d-grid gap-2 d-md-block">
+                   <button id="pesquisar" type="button" class="btn btn-outline-success" onclick="pesquisa()">Pesquisar</button>
+               </div>
+           </div>
+        </div>
+        <br/>
         <p class="h2">Notas:</p>
         <table class="table">
             <thead>
@@ -152,12 +163,13 @@
                 <img src="https://logodownload.org/wp-content/uploads/2016/11/sisu-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top display-3">
                 Simulador SISU
             </a>
-            <a>Você está em: <span id="endereco"></span></a>
+            <a>Olá Você está acessando de: <span id="endereco"></span></a>
         </div>
     </nav>
 
 
     <script>
+        var user = document.getElementById("user");
         $.get("http://ipinfo.io", function(response) {
             $("#endereco").html(response.city)
         }, "jsonp");

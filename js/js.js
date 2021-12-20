@@ -4,9 +4,9 @@ document.getElementById('texto-protegido').onpaste = function(){
 
 document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {
-        document.title = 'Hey, sua classificação é importante!!';
+        document.title = 'Hey, sua classificação é importante!';
     } else {
-        document.title = "SISU - ENEM";
+        document.title = "Simulador SISU";
     }
 });
 
@@ -17,23 +17,7 @@ tabela.addEventListener("dblclick", function (event){
 
 /*Pesquisa*/
 function pesquisa(){
-    var input, filtro, table, tr, td, i, txtValue;
-    input = document.getElementById("pesquisar");
-    filtro = input.value.toUpperCase();
-    table = document.getElementById("tabela");
-    tr = table.getElementsByTagName("tr");
-
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filtro) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
+    //Não consegui fazer isso
 }
 /*Bloqueador*/
 function blockCopy(e) {

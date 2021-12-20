@@ -50,9 +50,9 @@ function montaTr(aluno) {
     alunoTr.appendChild(montaTd(aluno.media, "media"));
 
     if(aluno.media >= 650){
-        alunoTr.classList.add("aprovado");
+        document.getElementById("tr").style.backgroundColor = "#00FA9A";
     }else{
-        alunoTr.classList.add("reprovado");
+        alunoTr.style.backgroundColor = "#B22222";
     }
 
     return alunoTr;

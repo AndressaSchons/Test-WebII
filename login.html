@@ -24,7 +24,7 @@
     }
     </style>
 
-    <title >Login Simulador Sisu</title>
+    <title>Login Simulador Sisu</title>
 </head>
 <body>
 <header>
@@ -83,13 +83,13 @@
     var user = document.getElementById('user');
     var password = document.getElementById('psswd');
 
-    if(user != "") var verifyUser = true;
-    if(password != "") var verifyPsswd = true;
+    if(user !== "") var verifyUser = true;
+    if(password !== "") var verifyPsswd = true;
 
-    if(verifyUser == true && verifyPsswd == true){
+    if(verifyUser === true && verifyPsswd === true){
         window.location.href = "index.html";
     }
-    else if{
+    else if(verifyUser === false || verifyPsswd === false){
         document.write("Recarregue a página e insira os dados corretamente")
     }
 

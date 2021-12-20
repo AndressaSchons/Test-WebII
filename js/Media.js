@@ -64,7 +64,7 @@ for (var i = 0; i < alunos.length; i++) {
 
 function calculoMedia(notaLing, notaCH, notaRed, notaMat, notaCN){
     media = (parseInt(notaCH) + parseInt(notaCN) + parseInt(notaLing) + parseInt(notaRed) + parseInt(notaMat)) / 5;
-    console.log("olá11");
+
     return media;
 }
 function validaNotas(nota){
