@@ -1,24 +1,24 @@
 var alunos = document.querySelectorAll(".aluno");
 
 for (var i = 0; i < alunos.length; i++) {
-    var alunoo = alunos[i];
+    var aluno = alunos[i];
 
-    var tdNotaLing = alunoo.querySelector(".infoLing");
+    var tdNotaLing = aluno.querySelector(".infoLing");
     var notaLing = tdNotaLing.textContent;
 
-    var tdNotaCH = alunoo.querySelector(".infoCH");
+    var tdNotaCH = aluno.querySelector(".infoCH");
     var notaCH = tdNotaCH.textContent;
 
-    var tdNotaRed = alunoo.querySelector(".infoRed");
+    var tdNotaRed = aluno.querySelector(".infoRed");
     var notaRed = tdNotaRed.textContent;
 
-    var tdNotaMat = alunoo.querySelector(".infoMat");
+    var tdNotaMat = aluno.querySelector(".infoMat");
     var notaMat = tdNotaMat.textContent;
 
-    var tdNotaCN = alunoo.querySelector(".infoCN");
+    var tdNotaCN = aluno.querySelector(".infoCN");
     var notaCN = tdNotaCN.textContent;
 
-    var tdMedia = alunoo.querySelector(".media");
+    var tdMedia = aluno.querySelector(".media");
 
     var notaLingValida = validaNotas(notaLing);
     var notaCHValida = validaNotas(notaCH);
@@ -29,31 +29,31 @@ for (var i = 0; i < alunos.length; i++) {
     if (!notaLingValida) {
         notaLingValida = false;
         tdMedia.textContent = "Nota de Linguagens inválido";
-        alunoo.classList.add("aluno-invalido");
+        aluno.classList.add("aluno-invalido");
     }
 
     if (!notaCHValida) {
         notaCHValida = false;
         tdMedia.textContent = "Nota de Ciências Humanas inválida";
-        alunoo.classList.add("aluno-invalido");
+        aluno.classList.add("aluno-invalido");
     }
 
     if (!notaRedValida) {
         notaRedValida = false;
         tdMedia.textContent = "Nota de Redação Inválida";
-        alunoo.classList.add("aluno-invalido");
+        aluno.classList.add("aluno-invalido");
     }
 
     if (!notaMatValida) {
         notaMatValida = false;
         tdMedia.textContent = "Nota de Matemática Inválida";
-        alunoo.classList.add("aluno-invalido");
+        aluno.classList.add("aluno-invalido");
     }
 
     if (!notaCNValida) {
         notaCNValida = false;
         tdMedia.textContent = "Nota de Ciências da Natureza inválida";
-        alunoo.classList.add("aluno-invalido");
+        aluno.classList.add("aluno-invalido");
     }
 
     if (notaLingValida && notaCHValida && notaRedValida && notaMatValida && notaCNValida) {
@@ -68,14 +68,12 @@ function calculoMedia(notaLing, notaCH, notaRed, notaMat, notaCN){
     return media;
 }
 function validaNotas(nota){
-    if (nota >= 650){
-        //document.querySelector("table tr:firt-child");
-        //$(this).parent.backgroundColor("#00FA9A");
+    if (nota >= 650 && nota <= 1000){
+        aluno.classList.add("aluno-aprovado");
         return true;
     }
     else{
-        //$(this).parent.backgroundColor("#B22222");
-        //document.querySelector("table tr:firt-child");
+        aluno.classList.add("aluno-reprovado");
         return false;
     }
 }
